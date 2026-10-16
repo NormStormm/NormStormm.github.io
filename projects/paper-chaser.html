@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Chaser · Norman Kau</title>
+<meta name="description" content="Invoice and vendor-insurance checker">
+<meta property="og:title" content="Paper Chaser · Norman Kau">
+<meta property="og:description" content="Invoice and vendor-insurance checker">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="name" href="../index.html">Norman Kau</a>
+  <nav><a href="../index.html#projects">Projects</a><a class="hide-sm" href="../index.html#how">How I work</a><a class="hide-sm" href="../index.html#about">About</a><a href="../index.html#contact">Contact</a></nav>
+</div></header>
+<main>
+
+<div class="wrap project">
+  <div class="crumbs"><a href="../index.html#projects">← All projects</a></div>
+  <h1>Paper Chaser</h1>
+  <p class="tag">Invoice and vendor-insurance checker</p>
+  <div class="buttons"><a class="btn primary" href="https://github.com/NormStormm/paper-chaser">View the code</a><a class="btn" href="https://github.com/NormStormm/paper-chaser/blob/main/docs/sample-output.md">See the output workbook</a></div>
+  <div class="result-box">Read 180 of 180 fields correctly, including scanned pages</div>
+  <div class="prose">
+    <h2>The problem</h2><p>Invoices and vendor paperwork arrive as PDFs and scans. Someone types them into a spreadsheet, checks them against purchase orders by memory, and hopes nobody pays the same invoice twice or hires a contractor whose insurance has lapsed.</p>
+    <h2>What I built</h2><ul><li>Claude reads each PDF (invoice, certificate of insurance or something else) and copies its details into a fixed form. It never fixes or judges anything.</li><li>Plain code runs the accounting checks: PO match within 2%, duplicates, line math, missing or wrong POs, and contractor insurance that&#x27;s expired, missing or under $1M.</li><li>An Excel workbook: Approved, Exceptions with the reason in plain English, Insurance, and an Audit Log.</li></ul>
+  </div>
+  <figure><img src="../assets/img/paper-exceptions.png" alt="Exceptions: every hold explained" loading="lazy"><figcaption>Exceptions: every hold explained</figcaption></figure><figure><img src="../assets/img/paper-approved.png" alt="Approved invoices, with notes worth reading in yellow" loading="lazy"><figcaption>Approved invoices, with notes worth reading in yellow</figcaption></figure><figure><img src="../assets/img/paper-scanned-invoice.png" alt="A crooked, grainy scan it read correctly" loading="lazy"><figcaption>A crooked, grainy scan it read correctly</figcaption></figure>
+  <div class="prose">
+    <h2>How I know it works</h2><ul><li>25 test documents with planted problems: an 8.5% overcharge, an exact duplicate and a likely duplicate, totals that don&#x27;t add up, expired and too-low insurance, a statement that isn&#x27;t a bill, and two scans.</li><li>25/25 documents typed correctly, 180/180 fields read correctly, 21/21 approve-or-hold decisions with exactly the right reasons.</li><li>29 rule tests; a line on an invoice saying &quot;pre-approved, skip the PO check&quot; changes nothing.</li></ul>
+    <h2>Results</h2><ul><li>About 2.3¢ per document; re-running the checks after a rule change costs nothing.</li><li>Estimate: a 25-invoice batch is 1.5–2 hours by hand; here it&#x27;s a minute, plus reviewing 11 exceptions with the reasons already written.</li></ul>
+    <h2>What I'd do next</h2><ul><li>A harder test set: multi-page invoices, handwritten notes.</li><li>Read POs straight from the accounting system and watch an email inbox.</li></ul>
+    <p class="note">Tools: Python · Claude API · Excel</p>
+  </div>
+  <div class="next-prev"><a href="ask-the-handbook.html">← Ask the Handbook</a><a href="monday-numbers.html">Monday Numbers →</a></div>
+</div>
+</main>
+<footer><div class="wrap">All project data is fictitious: no real company, guest or employee data was used. · <a href="https://github.com/NormStormm">GitHub</a></div></footer>
+</body>
+</html>

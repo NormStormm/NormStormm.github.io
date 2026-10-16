@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shift Desk · Norman Kau</title>
+<meta name="description" content="AI dispatcher for hotel guest requests">
+<meta property="og:title" content="Shift Desk · Norman Kau">
+<meta property="og:description" content="AI dispatcher for hotel guest requests">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="name" href="../index.html">Norman Kau</a>
+  <nav><a href="../index.html#projects">Projects</a><a class="hide-sm" href="../index.html#how">How I work</a><a class="hide-sm" href="../index.html#about">About</a><a href="../index.html#contact">Contact</a></nav>
+</div></header>
+<main>
+
+<div class="wrap project">
+  <div class="crumbs"><a href="../index.html#projects">← All projects</a></div>
+  <h1>Shift Desk</h1>
+  <p class="tag">AI dispatcher for hotel guest requests</p>
+  <div class="buttons"><a class="btn primary" href="https://github.com/NormStormm/shift-desk">View the code</a><a class="btn" href="https://github.com/NormStormm/shift-desk/blob/main/docs/eval-report.md">Read the evaluation</a></div>
+  <div class="result-box">Kept all 13 emergencies urgent on 60 requests it had never seen</div>
+  <div class="prose">
+    <h2>The problem</h2><p>Overnight guest and staff requests arrive by phone, text and walk-up. Someone writes them on a notepad and decides which department handles each one, and the decision depends on one person knowing who does what. Things get missed at shift change.</p>
+    <h2>What I built</h2><ul><li>An n8n workflow where Claude sorts every request: team, urgency, room, a one-line summary and language, in a fixed format.</li><li>The workflow checks Claude&#x27;s answer instead of trusting it. Anything unclear, low-confidence or manipulative goes to the Duty Manager for review.</li><li>The right team gets an email; urgent tickets also copy the Duty Manager. Every ticket is logged to Google Sheets.</li><li>Alerts when anything breaks, including quiet failures that don&#x27;t crash the workflow.</li><li>A 3 pm and 11 pm shift handover: exact counts from code, plus a short note written by Claude.</li></ul>
+  </div>
+  <figure><img src="../assets/img/workflow-canvas.png" alt="The n8n workflow, from intake to Claude to email, log and alerts" loading="lazy"><figcaption>The n8n workflow, from intake to Claude to email, log and alerts</figcaption></figure><figure><img src="../assets/img/urgent-email.png" alt="What Engineering receives for an urgent leak, with the Duty Manager copied" loading="lazy"><figcaption>What Engineering receives for an urgent leak, with the Duty Manager copied</figcaption></figure><figure><img src="../assets/img/shift-summary-email.png" alt="The 3 pm / 11 pm shift handover email" loading="lazy"><figcaption>The 3 pm / 11 pm shift handover email</figcaption></figure>
+  <div class="prose">
+    <h2>How I know it works</h2><ul><li>40-request test set: urgency accuracy went from 80% to 100% after fixing two causes, each documented before re-running.</li><li>Held-out test: 60 new requests with the answer key frozen first. 100% right team, 95% right urgency, 90% right routing.</li><li>All 13 true emergencies kept URGENT; all 5 spam, empty and manipulation attempts sent to a person.</li><li>Compared three Claude models: Haiku matched it at about 1/50th of the cost but under-rated one safety issue every run.</li><li>Nine findings written up, including a duplicate-ticket bug fixed with an idempotent write and a false alarm in the alert check.</li></ul>
+    <h2>Results</h2><ul><li>Under 1¢ per request (about $0.01), median 2.4 seconds.</li><li>Estimate: at 40 requests a night, about 80 minutes of reading and forwarding a night handled automatically.</li></ul>
+    <h2>What I'd do next</h2><ul><li>Take requests by text (Twilio) or email instead of a web form.</li><li>Track ticket status (open, done) and remind teams about open tickets.</li></ul>
+    <p class="note">Tools: n8n · Claude API · Google Sheets · Gmail</p>
+  </div>
+  <div class="next-prev"><a href="compliance-tracker.html">← Compliance Tracker</a><a href="ask-the-handbook.html">Ask the Handbook →</a></div>
+</div>
+</main>
+<footer><div class="wrap">All project data is fictitious: no real company, guest or employee data was used. · <a href="https://github.com/NormStormm">GitHub</a></div></footer>
+</body>
+</html>

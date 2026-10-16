@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monday Numbers · Norman Kau</title>
+<meta name="description" content="Restaurant KPI dashboard with a fact-checked AI brief">
+<meta property="og:title" content="Monday Numbers · Norman Kau">
+<meta property="og:description" content="Restaurant KPI dashboard with a fact-checked AI brief">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="name" href="../index.html">Norman Kau</a>
+  <nav><a href="../index.html#projects">Projects</a><a class="hide-sm" href="../index.html#how">How I work</a><a class="hide-sm" href="../index.html#about">About</a><a href="../index.html#contact">Contact</a></nav>
+</div></header>
+<main>
+
+<div class="wrap project">
+  <div class="crumbs"><a href="../index.html#projects">← All projects</a></div>
+  <h1>Monday Numbers</h1>
+  <p class="tag">Restaurant KPI dashboard with a fact-checked AI brief</p>
+  <div class="buttons"><a class="btn primary" href="https://public.tableau.com/app/profile/norman.kau/viz/MondayNumbersProject/MondayNumbers">Open the live dashboard</a><a class="btn" href="https://github.com/NormStormm/monday-numbers">View the code</a></div>
+  <div class="result-box">Refuses to publish when a day is missing; every number in the AI brief verified</div>
+  <div class="prose">
+    <h2>The problem</h2><p>Every Monday a manager exports sales, time-clock and purchase reports, rebuilds the same spreadsheet, and still can&#x27;t say why labor cost went up. Exports are messy, and one missing day quietly makes every number wrong.</p>
+    <h2>What I built</h2><ul><li>SQL that cleans real-world mess: a mid-period date-format change, re-exported rows, a time clock that gets overnight shifts wrong, a forgotten clock-out.</li><li>A data-quality gate that blocks the report if a day is missing or sales don&#x27;t reconcile, and lists everything the cleaning fixed.</li><li>The KPIs a GM reviews: labor %, sales per labor hour, overtime, food and bar cost %, prime cost, menu mix.</li><li>A Tableau dashboard and a weekly brief written by Claude. Code checks every number Claude quotes against the data.</li></ul>
+  </div>
+  <figure><img src="../assets/img/monday-dashboard.png" alt="The Tableau dashboard with Claude&#x27;s weekly brief" loading="lazy"><figcaption>The Tableau dashboard with Claude&#x27;s weekly brief</figcaption></figure>
+  <div class="prose">
+    <h2>How I know it works</h2><ul><li>With Saturday missing, food cost would have read 38.7% instead of 31.3%. The gate stopped it.</li><li>The brief found both planted problems on its own: an overstaffed Tuesday and a produce supplier&#x27;s price increase. 26 of 26 numbers verified.</li><li>The heatmap surfaced a pattern nobody planted: Sunday labor runs hot every week because 55% of Sunday hours are overtime.</li><li>16 tests on the cleaning, the gate, overtime and the number check.</li></ul>
+    <h2>Results</h2><ul><li>About 4¢ per weekly brief; everything else runs free on a laptop.</li></ul>
+    <h2>What I'd do next</h2><ul><li>Give the brief 12-week patterns, not just last week.</li><li>Pull exports from a POS like Toast and email the brief at 6 am Monday.</li></ul>
+    <p class="note">Tools: SQL (DuckDB) · Tableau · Python · Claude API</p>
+  </div>
+  <div class="next-prev"><a href="paper-chaser.html">← Paper Chaser</a><a href="compliance-tracker.html">Compliance Tracker →</a></div>
+</div>
+</main>
+<footer><div class="wrap">All project data is fictitious: no real company, guest or employee data was used. · <a href="https://github.com/NormStormm">GitHub</a></div></footer>
+</body>
+</html>

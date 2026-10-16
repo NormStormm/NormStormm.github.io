@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask the Handbook · Norman Kau</title>
+<meta name="description" content="Onboarding assistant that only answers from the handbook">
+<meta property="og:title" content="Ask the Handbook · Norman Kau">
+<meta property="og:description" content="Onboarding assistant that only answers from the handbook">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="name" href="../index.html">Norman Kau</a>
+  <nav><a href="../index.html#projects">Projects</a><a class="hide-sm" href="../index.html#how">How I work</a><a class="hide-sm" href="../index.html#about">About</a><a href="../index.html#contact">Contact</a></nav>
+</div></header>
+<main>
+
+<div class="wrap project">
+  <div class="crumbs"><a href="../index.html#projects">← All projects</a></div>
+  <h1>Ask the Handbook</h1>
+  <p class="tag">Onboarding assistant that only answers from the handbook</p>
+  <div class="buttons"><a class="btn primary" href="https://github.com/NormStormm/ask-the-handbook">View the code</a><a class="btn" href="https://github.com/NormStormm/ask-the-handbook/blob/main/docs/findings.md">Read the findings</a></div>
+  <div class="result-box">39 of 40 right, and every out-of-handbook question sent to HR</div>
+  <div class="prose">
+    <h2>The problem</h2><p>New hires ask the same questions every week: when schedules come out, how early to call out, how tips work. The answers are in a handbook nobody reads, so managers answer them over and over in the middle of a shift.</p>
+    <h2>What I built</h2><ul><li>A chat page that answers from the employee handbook and procedures only, and quotes the exact section it used.</li><li>No citation, no answer: if Claude can&#x27;t point to a section, nothing is shown and the question goes to HR. Enforced in code.</li><li>Every number in an answer (hours, dollars, phone extensions) must appear in the section it cites, or it&#x27;s flagged for a person.</li><li>An HR view listing what the handbook couldn&#x27;t answer: a to-do list for the next update.</li><li>One-tap questions for the first day, week and month.</li></ul>
+  </div>
+  <figure><img src="../assets/img/handbook-answer-with-sources.png" alt="An answer with its handbook sections quoted" loading="lazy"><figcaption>An answer with its handbook sections quoted</figcaption></figure><figure><img src="../assets/img/handbook-not-in-handbook.png" alt="Not in the handbook: it says so and sends the question to HR" loading="lazy"><figcaption>Not in the handbook: it says so and sends the question to HR</figcaption></figure><figure><img src="../assets/img/handbook-hr-view.png" alt="The HR view of questions the handbook couldn&#x27;t answer" loading="lazy"><figcaption>The HR view of questions the handbook couldn&#x27;t answer</figcaption></figure>
+  <div class="prose">
+    <h2>How I know it works</h2><ul><li>40 test questions: 39/40 right with Claude Opus, 36/40 with Claude Haiku.</li><li>All 9 out-of-handbook questions sent to HR, including two attempts to override its rules and questions it knows the answer to from general knowledge.</li><li>Testing caught four bugs, including one of mine where a coincidental number match passed as evidence. All written up.</li></ul>
+    <h2>Results</h2><ul><li>About 0.6¢ per question (0.02¢ with Haiku); the handbook is cached, so repeat questions cost a tenth as much.</li></ul>
+    <h2>What I'd do next</h2><ul><li>A blind test written by real new hires.</li><li>Sign-in, and a weekly email to HR with the handbook&#x27;s gaps.</li></ul>
+    <p class="note">Tools: Claude API (citations) · Python · FastAPI</p>
+  </div>
+  <div class="next-prev"><a href="shift-desk.html">← Shift Desk</a><a href="paper-chaser.html">Paper Chaser →</a></div>
+</div>
+</main>
+<footer><div class="wrap">All project data is fictitious: no real company, guest or employee data was used. · <a href="https://github.com/NormStormm">GitHub</a></div></footer>
+</body>
+</html>

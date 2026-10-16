@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compliance Tracker · Norman Kau</title>
+<meta name="description" content="Certification, permit and vendor-insurance expiry tracker">
+<meta property="og:title" content="Compliance Tracker · Norman Kau">
+<meta property="og:description" content="Certification, permit and vendor-insurance expiry tracker">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="name" href="../index.html">Norman Kau</a>
+  <nav><a href="../index.html#projects">Projects</a><a class="hide-sm" href="../index.html#how">How I work</a><a class="hide-sm" href="../index.html#about">About</a><a href="../index.html#contact">Contact</a></nav>
+</div></header>
+<main>
+
+<div class="wrap project">
+  <div class="crumbs"><a href="../index.html#projects">← All projects</a></div>
+  <h1>Compliance Tracker</h1>
+  <p class="tag">Certification, permit and vendor-insurance expiry tracker</p>
+  <div class="buttons"><a class="btn primary" href="https://docs.google.com/spreadsheets/d/1eqmTiSv_Z3JL1mqJYDSq0thiGa12MsO5jR1klJnoUdo/copy">Try it: make a copy</a><a class="btn" href="https://github.com/NormStormm/compliance-tracker">View the code</a></div>
+  <div class="result-box">Flags lapses 30 days early, and you can try it in your own Google account</div>
+  <div class="prose">
+    <h2>The problem</h2><p>Food-handler cards, liquor-server certifications, permits and vendor insurance all expire on different days. Tracking lives in one person&#x27;s spreadsheet or memory, and lapses surface on the day of an inspection.</p>
+    <h2>What I built</h2><ul><li>A Google Sheet with an automatic 7 am check that color-codes every item.</li><li>Reminders to the owner at 30, 14 and 3 days, never the same one twice; escalation to the manager on the expiry day.</li><li>Bad data (impossible dates, missing emails) is flagged and rerouted instead of breaking the run.</li><li>An audit log of every reminder, escalation and renewal, and a live compliance dashboard.</li></ul>
+  </div>
+  <figure><img src="../assets/img/compliance-dashboard.png" alt="Dashboard: % compliant, overdue, due soon" loading="lazy"><figcaption>Dashboard: % compliant, overdue, due soon</figcaption></figure><figure><img src="../assets/img/compliance-tracker.webp" alt="The tracker, color-coded by status" loading="lazy"><figcaption>The tracker, color-coded by status</figcaption></figure><figure><img src="../assets/img/compliance-escalation-email.png" alt="An escalation email (test mode)" loading="lazy"><figcaption>An escalation email (test mode)</figcaption></figure>
+  <div class="prose">
+    <h2>How I know it works</h2><ul><li>22 automated tests, including a simulated 75-day timeline proving the exact reminder sequence.</li><li>A 17-step manual test plan in a live sheet, which caught 4 issues the automated tests couldn&#x27;t. All fixed and documented.</li><li>Safe rollout: a preview mode that sends nothing, and a test mode that sends everything only to the tester.</li></ul>
+    <h2>Results</h2><ul><li>Estimate: about 85 minutes a week saved for a 100-person property tracking about 150 items.</li></ul>
+    <h2>What I'd do next</h2><ul><li>Let employees upload renewed cards through a form.</li><li>Use AI to read expiry dates off uploaded certificates (see Paper Chaser).</li></ul>
+    <p class="note">Tools: Google Apps Script · Google Sheets · Gmail</p>
+  </div>
+  <div class="next-prev"><a href="monday-numbers.html">← Monday Numbers</a><a href="shift-desk.html">Shift Desk →</a></div>
+</div>
+</main>
+<footer><div class="wrap">All project data is fictitious: no real company, guest or employee data was used. · <a href="https://github.com/NormStormm">GitHub</a></div></footer>
+</body>
+</html>
