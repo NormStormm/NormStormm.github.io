@@ -10,7 +10,7 @@ HEADLINE = "I turn restaurant and hotel headaches into working AI automations"
 SUBHEAD = "Ten years in restaurants and hotels, from host to shift lead · Finance degree, December 2026 · Oahu, Hawaii"
 INTRO = ("I build the tools I wished I had on shift: an AI dispatcher for guest requests, an invoice checker, "
          "a Monday KPI report that won't publish bad numbers, a handbook assistant that refuses to guess, "
-         "and a compliance tracker. Each one is tested against failures I planted on purpose, and the results, "
+         "a compliance tracker, and a portfolio tracker I use every day. Each one is tested against failures I planted on purpose, and the results, "
          "including what broke, are written up.")
 
 HOW_I_WORK = [
@@ -178,5 +178,30 @@ PROJECTS = [
         "next": ["Let employees upload renewed cards through a form.", "Use AI to read expiry dates off uploaded certificates (see Paper Chaser)."],
         "links": [("Try it: make a copy", "https://docs.google.com/spreadsheets/d/1eqmTiSv_Z3JL1mqJYDSq0thiGa12MsO5jR1klJnoUdo/copy"),
                   ("View the code", "https://github.com/NormStormm/compliance-tracker")],
+    },
+    {
+        "slug": "portfolio-tracker",
+        "name": "Portfolio Tracker",
+        "tagline": "Portfolio tracking notification system",
+        "result": "Runs twice a day on its own, for free, and alerts only on real price spikes",
+        "tools": ["Python", "GitHub Actions", "Telegram API"],
+        "card_img": "portfolio-tracker-card.png",
+        "problem": "Checking several crypto wallets on two blockchains means opening multiple apps and adding things up by hand, "
+                   "and junk tokens airdropped into wallets show fake values that make the totals wrong.",
+        "built": [
+            "A scheduled pipeline on GitHub Actions: at 9 am and 9 pm it reads every wallet's balances on Solana and NEAR, prices each holding, and sends a summary to Telegram with the change since the last report.",
+            "A second job every 30 minutes that stays silent unless a holding jumps 25% and gains $250 within an hour, with a cooldown so one move isn't reported repeatedly.",
+            "Junk filtering: tokens with almost no trading liquidity, or worth more than their whole trading pool, are left out of the totals.",
+            "Secrets (bot token, wallet list) live in GitHub's encrypted secrets, never in the code; previous values are cached, never committed.",
+        ],
+        "images": [("portfolio-tracker-message.png", "A sample twice-daily report (sample numbers)")],
+        "proof": [
+            "In daily use since September 2026.",
+            "If a wallet or price source fails, the report says so and leaves it out of the total instead of failing or sending a wrong number.",
+            "Adding another blockchain is one new file, following the same pattern as the first two.",
+        ],
+        "results": ["Runs on GitHub's free tier, with no computer left on."],
+        "next": ["Automated tests with recorded sample data.", "Include positions held inside lending and liquidity apps, not just wallet balances."],
+        "links": [("View the code", "https://github.com/NormStormm/portfolio-tracker")],
     },
 ]
