@@ -7,14 +7,14 @@ LINKEDIN = None     # e.g. "https://www.linkedin.com/in/..." (None hides it)
 RESUME = None       # e.g. "assets/Norman-Kau-Resume.pdf" (None hides it)
 
 HEADLINE = "I turn restaurant and hotel headaches into working AI automations"
-SUBHEAD = "Ten years in restaurant and hotel operations · Finance degree, December 2026 · Oahu, Hawaii"
+SUBHEAD = "Ten years serving guests in restaurants and hotels · Finance degree, December 2026 · Oahu, Hawaii"
 INTRO = ("I build the tools I wished I had on shift: an AI dispatcher for guest requests, an invoice checker, "
          "a Monday KPI report that won't publish bad numbers, a handbook assistant that refuses to guess, "
          "and a compliance tracker. Each one is tested against failures I planted on purpose, and the results, "
          "including what broke, are written up.")
 
 HOW_I_WORK = [
-    ("Start with the real process", "Every project begins with a job I've done by hand: sorting requests, keying invoices, building the Monday report."),
+    ("Start with the real problem", "Every project starts with something I saw go wrong on shift: lost requests, paperwork, the Monday report, new-hire questions."),
     ("AI reads, code decides", "AI does the language work. Plain code does the math, the checks and the approvals, so they're exact and testable."),
     ("Test it on purpose", "I plant the failures (duplicates, scans, bad math, prompt injection, missing data) and score the results against an answer key written first."),
     ("Write down what broke", "Each project has a findings log: what failed, why, the fix, and how it was verified. Including my own mistakes."),
@@ -22,12 +22,13 @@ HOW_I_WORK = [
 ]
 
 ABOUT = [
-    "I've spent about ten years in restaurants and hotels, in nearly every role from the floor to management. "
-    "The same problems show up everywhere: requests written on notepads, invoices typed in by hand, reports rebuilt every Monday, "
+    "I've spent about ten years serving guests in restaurants and hotels. "
+    "From the floor, the same problems show up everywhere: requests written on notepads, invoices typed in by hand, reports rebuilt every Monday, "
     "and new hires asking the same questions every week.",
     "I'm finishing a degree in finance (December 2026) and moving into AI automation and operations roles where I can build fixes "
-    "for those problems instead of working around them. I build with n8n, Python, SQL, Google Apps Script, Tableau and the Claude API, "
-    "and I use AI coding tools (Claude Code) as a pair programmer while owning the design, the testing and the judgment calls.",
+    "for those problems instead of working around them. I build with AI tools: n8n, the Claude API, and Claude Code as a coding partner "
+    "for the Python, SQL, Apps Script and Tableau pieces. I decide what each project should do, design the tests, find what breaks, "
+    "and write it up.",
 ]
 
 PROJECTS = [
