@@ -7,7 +7,7 @@ LINKEDIN = None     # e.g. "https://www.linkedin.com/in/..." (None hides it)
 RESUME = None       # e.g. "assets/Norman-Kau-Resume.pdf" (None hides it)
 
 HEADLINE = "I turn restaurant and hotel headaches into working AI automations"
-SUBHEAD = "Ten years serving guests in restaurants and hotels · Finance degree, December 2026 · Oahu, Hawaii"
+SUBHEAD = "Ten years in restaurants and hotels, from host to shift lead · Finance degree, December 2026 · Oahu, Hawaii"
 INTRO = ("I build the tools I wished I had on shift: an AI dispatcher for guest requests, an invoice checker, "
          "a Monday KPI report that won't publish bad numbers, a handbook assistant that refuses to guess, "
          "and a compliance tracker. Each one is tested against failures I planted on purpose, and the results, "
@@ -22,8 +22,8 @@ HOW_I_WORK = [
 ]
 
 ABOUT = [
-    "I've spent about ten years serving guests in restaurants and hotels. "
-    "From the floor, the same problems show up everywhere: requests written on notepads, invoices typed in by hand, reports rebuilt every Monday, "
+    "I've spent about ten years in restaurants and hotels in almost every role: host, busser, food runner, server, bartender, "
+    "shift lead, and some kitchen work. From every side of the floor, the same problems show up: requests written on notepads, invoices typed in by hand, reports rebuilt every Monday, "
     "and new hires asking the same questions every week.",
     "I'm finishing a degree in finance (December 2026) and moving into AI automation and operations roles where I can build fixes "
     "for those problems instead of working around them. I build with AI tools: n8n, the Claude API, and Claude Code as a coding partner "
