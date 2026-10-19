@@ -3,7 +3,7 @@
 NAME = "Norman Kau"
 GITHUB = "https://github.com/NormStormm"
 EMAIL = None        # job-search email, e.g. "norman.kau.work@gmail.com" (None hides it)
-LINKEDIN = "https://www.linkedin.com/in/norman-kau-22b034445/"
+LINKEDIN = "https://www.linkedin.com/in/normankau/"
 RESUME = None       # e.g. "assets/Norman-Kau-Resume.pdf" (None hides it)
 
 HEADLINE = "I turn restaurant and hotel headaches into working AI automations"
